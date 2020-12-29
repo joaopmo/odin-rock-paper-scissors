@@ -1,0 +1,203 @@
+:root {
+    --clr-pink: 245, 214, 230;
+    --clr-silver: 205, 228, 246;
+    --clr-green: 232, 236, 201;
+    --clr-light-pink: 254, 175, 170;
+    --clr-purple: 148, 100, 230;
+    --clr-yellow: 245, 232, 102;
+    --clr-red: 236, 88, 125;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2, 
+p {
+    margin: 0;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+
+hr {
+    flex-basis: 100%; 
+    height: 0; 
+    margin: 0; 
+    border: none;
+    display: block;
+}
+
+#game-container {
+    background: linear-gradient(45deg, rgba(var(--clr-silver)), rgba(var(--clr-pink)), rgba(var(--clr-green)));
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+
+#game-container h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    text-align: center;
+    margin-top: 7vh;
+    padding: .5rem;
+    color: #fff;
+    -webkit-text-stroke: 2px rgb(var(--clr-red));
+    text-shadow: 
+        0 0 5px rgb(var(--clr-red)), 
+        0 0 10px rgb(var(--clr-red)), 
+        0 0 15px rgb(var(--clr-red));
+}
+
+#weapon-btn-container {
+    text-align: center;
+    margin-top: 7vh;
+    display: block;
+    min-width: 300px;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#weapon-btn-container input[type="radio"] {
+    display: none;
+}
+
+#weapon-btn-container label {
+    display: block;
+    cursor: pointer;
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid rgb(var(--clr-red));
+    box-shadow: 2px 2px 5px rgb(var(--clr-red));
+    background-color: #fff;
+}
+
+#weapon-btn-container :checked + label {
+    background-color: rgba(var(--clr-pink));
+}
+
+    
+#play-btn-container {
+    margin-top: 25px;
+}
+
+#play-btn-container input[type="submit"] {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.4rem;
+    background-color: rgba(var(--clr-purple), 0.5);
+    background-image: linear-gradient(45deg, rgba(var(--clr-silver)), rgba(var(--clr-pink)), rgba(var(--clr-green)));
+    border: 2px solid rgba(var(--clr-purple), 0.7);
+    box-shadow: 0 0 5px rgb(var(--clr-purple));
+    color: #fff;
+    padding: 8px 5px 8px 8px;
+    border-radius: 20px;
+    -webkit-text-stroke: 1px rgb(var(--clr-purple));
+    outline: none;
+}
+
+#play-btn-container input[type="submit"]:hover{
+    box-shadow: 0 0 15px rgb(var(--clr-purple));
+    cursor: pointer;
+}
+
+#play-btn-container input[type="submit"]:active {
+    box-shadow: 0 0 5px rgb(var(--clr-purple));
+}
+
+#counter-container {
+    color: rgba(var(--clr-purple));
+    margin-top: 7vh;
+    margin-bottom: 10px;
+    font-family: 'Audiowide', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 300px;
+    width: 40vw;
+    border: 5px outset rgba(var(--clr-purple));
+    background-color: rgb(var(--clr-yellow));
+    position: relative;
+    z-index: 1;
+}
+
+#counter-container::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0.2;
+    z-index: -999;
+    background: url('img/pattern.jpg');
+    background-size: 30px;
+}
+
+#counter-container h2 {
+    font-size: 3.2rem;
+}
+
+.counter-player {
+    margin-top: 3vh;
+}
+
+.counter-player table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.counter-player table th {
+    line-height: 2rem;
+    font-size: 2.4rem;
+    position: relative;
+}
+
+
+.counter-player table tr td {
+    height: min(30vh, 30vw);
+}
+
+.counter-player table tr td:first-child {
+    border-right: 1px solid #B70328;
+}
+
+
+#displayPlayer,
+#displayComputer {
+    font-size: 9.6rem;
+    position: relative;
+}
+
+#displayPlayer::before,
+#displayComputer::before  {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0.1;
+    z-index: -999;
+    background: var(--background);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

@@ -3,55 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script></script>
-    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/43d037e275.js" crossorigin="anonymous"></script>
+
+    <title>Janken</title>
 </head>
+
+
 <body>
+    <div id="game-container">
+        <h1>Choose your weapon!</h1>
+        <hr>
+        <form id="weapon-btn-container" action="javascript:;">
+            <input type="radio" id="rock" name="weapon" value="rock">
+            <label for="rock">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f)">
+                    <path d="M44.4175 6.24439C37.136 8.55864 31.8425 17.6234 26.9362 23.4871C19.3328 32.5738 -3.06937 45.1903 7.17942 62.2826C9.60904 66.3346 15.4317 66.443 19.1343 68.1898C24.4101 70.6789 30.5875 75.4806 35.3155 79.1664C46.4 87.8076 54.4652 98.4511 69.7007 93.9941C79.3272 91.178 94.1231 81.3908 95.7501 69.4755C96.7146 62.412 92.6487 57.4087 90.0746 51.5463C84.0705 37.8715 78.8174 26.4146 66.7541 17.834C58.5309 11.9848 56.1881 2.50335 44.4175 6.24439Z" fill="#B70328"/>
+                    </g>
+                    <path d="M57.5647 21.2911C56.1557 37.9918 31.1899 45.8606 40.3722 62.7523C56.4481 56.9564 61.9218 45.5752 74.7573 34.738C71.4792 50.6974 53.7583 62.6811 40.3722 66.1141C43.607 80.8687 64.5191 76.7275 72.6293 69.0348C77.0433 64.848 79.0864 58.8124 83.8592 54.9083C78.7287 72.7173 65.625 77.439 50.4854 79.561C58.125 94.3979 91.7968 84.9865 92.5695 67.2346C92.8229 61.4098 89.2922 57.4193 86.9673 52.6672C79.9576 38.3385 74.0483 29.8618 62.8079 19.5342C56.4405 13.6839 51.7163 4.1881 42.3948 11.6918C34.6239 17.9474 27.1426 27.5737 25.2062 38.0997C24.1692 43.7365 24.5286 52.5538 32.2816 50.6352C42.2142 48.1775 50.8627 29.0557 57.5647 21.2911ZM21.157 33.6174C13.3677 39.894 -0.487964 59.9649 17.107 63.9637C22.8037 65.2584 24.6243 58.861 30.2589 59.3906C24.7901 64.6069 25.8011 69.4467 32.2816 72.8375L35.3155 60.5112C29.7252 52.6186 17.9607 51.9137 17.1117 40.3409L22.1683 43.7026L21.157 33.6174ZM36.3269 71.7169C38.3159 79.5473 47.3833 88.0482 54.5308 89.6461V88.5255L36.3269 71.7169ZM55.5421 89.6461V90.7667L70.712 89.6461H55.5421Z" fill="white" class="foreground"/>
+                    <defs>
+                    <filter id="filter0_f" x="0.541992" y="1.3949" width="99.3532" height="97.6492" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+                    </filter>
+                    </defs>
+                    </svg> 
+            </label>
+
+            <input type="radio" id="paper" name="weapon" value="paper">
+            <label for="paper">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <g filter="url(#filter0_f)">
+                    <path d="M66.508 56.3412C71.7426 48.0395 89.1119 38.216 88.4262 27.9108C88.0659 22.4966 81.4198 23.8259 78.2464 26.2573C70.3714 32.2911 64.3215 40.1382 57.6283 47.1837C61.3185 37.1843 65.7349 27.3396 70.3637 17.6761C71.8887 14.4925 75.1704 8.51737 72.0269 5.24474C68.1922 1.25252 62.023 7.8696 60.2388 10.5583C53.1942 21.1742 49.5891 34.4171 45.4188 46.1662C40.6563 37.9855 43.29 25.4857 44.9914 16.6586C45.5777 13.617 48.3066 6.79316 44.749 4.52165C38.8161 0.733401 34.4034 11.1381 33.4748 14.6236C29.7115 28.7489 36.2922 44.1513 27.2227 57.1884C19.2072 68.7103 15.2459 30.9568 6.76898 42.4236C-1.9641 54.2368 11.3005 80.2462 22.1542 87.3099C26.0983 89.8767 31.0633 89.5832 35.4292 91.1521C41.318 93.2685 47.5882 97.6763 54.2941 95.409C66.5881 91.2525 65.0532 74.5167 72.5228 66.7298C76.5581 62.523 100.248 54.5416 95.2195 46.5297C91.4441 40.5144 71.4132 54.9177 66.508 56.3412Z" fill="#B70328"/>
+                    </g>
+                    <path d="M41.6753 6.75621C30.549 20.1254 39.2031 36.1223 33.6641 50.5087C31.8797 55.1433 29.5312 65.9669 21.7115 62.6748C11.6958 58.4581 16.1111 47.5285 8.37662 43.3862C8.37662 57.6483 8.93959 76.1668 23.964 85.37C27.556 87.5702 32.1221 87.5612 36.1255 88.7647C41.4003 90.3504 46.9 94.5724 52.7269 92.4846C63.0411 88.789 62.8818 72.1297 69.0345 64.8605C75.0637 57.7373 86.3552 56.5285 91.6234 48.4737C87.1634 49.768 83.3648 51.9733 79.4138 54.2545C75.6109 56.4501 57.7392 63.8729 64.6204 52.5437C70.1466 43.4457 82.2558 37.5469 84.9636 27.1062L53.8848 53.5613L69.4242 7.77371C58.5928 12.6263 55.7119 27.6235 52.213 37.2812C51.0725 40.4294 49.6075 48.9887 45.2227 49.7127C40.9086 50.4249 39.9231 42.8369 39.6447 40.3337C38.5135 30.1656 45.2558 15.9074 41.6753 6.75621Z" fill="white" class="foreground"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_f" x="-0.0632019" y="-0.296295" width="99.9798" height="100.337" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+                    </filter>
+                    <clipPath id="clip0">
+                    <rect width="100" height="100" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>  
+            </label>
+
+            <input type="radio" id="scissors" name="weapon" value="scissors">
+            <label for="scissors">
+                <svg width="100" height="103" viewBox="0 0 100 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f)">
+                    <path d="M50.6091 49.4637C43.2013 42.2927 39.5122 27.2091 37.2182 17.4637C36.3778 13.8934 36.0954 5.71343 31.8217 4.31474C24.0089 1.75775 24.6295 15.5029 25.1311 19.4637C26.5359 30.56 33.7124 41.4633 33.9735 52.4637C34.1311 59.105 28.4179 63.5894 26.1484 69.4637C23.3587 76.6848 28.5908 90.6332 36.1802 93.574C40.7207 95.3335 45.8728 95.001 50.6091 95.7885C55.7679 96.6463 60.7933 99.6727 66.0285 97.3734C76.2525 92.8831 77.3423 68.489 74.4868 59.4637C72.3732 52.7835 64.9388 44.5522 64.2045 38.4205C63.2874 30.7621 67.9986 22.4422 70.507 15.4637C71.4786 12.7606 73.0835 8.44551 69.865 6.51073C65.1461 3.67388 60.4889 10.1202 58.6759 13.4637C53.2754 23.4237 51.1042 38.3076 50.6091 49.4637Z" fill="#B70328"/>
+                    </g>
+                    <path d="M30.149 7C21.7286 23.9725 40.6039 41.6055 36.3345 59L37.3655 60L47.946 54.9807L42.5901 43L30.149 7ZM67.2624 8C58.5819 17.381 55.4402 31.5979 54.8912 44C63.3942 42.6276 63.1158 24.8996 65.8313 18C67.2017 14.5183 69.1897 11.4304 67.2624 8ZM55.9222 57C59.5898 53.0626 61.6707 51.1668 67.2624 52C66.2742 39.4439 48.4052 49.9586 55.9222 57ZM60.0459 66L71.3861 62C68.268 51.9385 58.4509 57.6014 60.0459 66ZM72.417 64L69.3242 65L70.3552 70L67.2624 67C61.5553 68.2661 56.7475 72.8412 51.7985 68H50.7675L53.8603 85H50.7675C50.7379 75.0102 47.772 68.0781 38.3964 76C38.5942 70.1074 40.8241 68.2356 46.6438 67C31.8706 54.3136 26.0462 74.5827 32.9044 85.8951C36.4324 91.7141 61.5952 97.8492 66.5934 92.6813C72.9513 86.1075 72.417 72.3529 72.417 64Z" fill="white" class="foreground"/>
+                    <defs>
+                    <filter id="filter0_f" x="20.866" y="0" width="58.9855" height="102.219" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+                    </filter>
+                    </defs>
+                    </svg>  
+            </label>
+
+            <hr>
+
+            <div id="play-btn-container">
+                <input type="submit" value="Aschente!">
+            </div>
+        </form>
+
+        <hr>
+
+        <div id="counter-container">
+            <h2>Five to win!</h2>
+
+            <div class="counter-player">
+                <table>
+                    <tr>
+                        <th><p id="player">You</p></th>
+                        <th><p id="computer">Kuhaku</p></th>
+                    </tr>
+                    <tr>
+                        <td id="displayPlayer">
+                            -
+                        </td>
+                        <td id="displayComputer">
+                            -
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function computerPlay() {
-            let moves = ['rock', 'paper', 'scissors'];
-            return moves[Math.floor(Math.random() * 4)];
+        // Color change
+        function changeColor() {
+            for(let i = 0, len = radios.length; i < len; i++) {
+                const label = document.querySelector(`label[for="${radios[i].id}"]`);
+                const svg = label.querySelector('.foreground');
+                const player = document.querySelector('#displayPlayer').style;
+                
+
+                if (radios[i].checked === true) {
+                    svg.setAttribute('fill', '#f5d6e6');  
+                } else {
+                    svg.setAttribute('fill', 'white'); 
+                }
+
+                if (this.id === 'rock') {
+                    player.setProperty('--background', 'url(img/rock.svg)');
+                } else if(this.id === 'paper') {
+                    player.setProperty('--background', 'url(img/paper.svg)');
+                } else if (this.id === 'scissors') {
+                    player.setProperty('--background', 'url(img/scissors.svg)');
+                }
+            }
         }
 
+        function checkComputer(play) {
+            const computer = document.querySelector('#displayComputer').style;
+            
+            if (play === 'rock') {
+                computer.setProperty('--background', 'url(img/rock.svg)');
+            } else if(play === 'paper') {
+                computer.setProperty('--background', 'url(img/paper.svg)');
+            } else if (play === 'scissors') {
+                computer.setProperty('--background', 'url(img/scissors.svg)');
+            }
+        }
+
+        // Return computer's play
+        function computerPlay() {
+            let moves = ['rock', 'paper', 'scissors'];
+            const playResult = moves[Math.floor(Math.random() * 3)];
+
+            setTimeout(checkComputer, 500, playResult);
+
+            return playResult;
+        }
+
+        // Check round winner
         function playRound(playerSelection, computerSelection) {
             playerSelection = playerSelection.toLowerCase();
 
-            if (playerSelection === computerSelection) {
+            if (playerSelection !== 'rock' &&
+            playerSelection !== 'paper' &&
+            playerSelection !== 'scissors') {
+                return;
+            } else if (playerSelection === computerSelection) {
                 return 0;
             } else if(playerSelection === 'rock') {
                 return (computerSelection === 'paper' ? -1 : 1);
             } else if (playerSelection === 'paper') {
                 return (computerSelection === 'scissors' ? -1 : 1);
-            } else {
+            } else if (playerSelection === 'scissors') {
                 return (computerSelection === 'rock' ? -1 : 1);
             }
         }
 
-        function game() {
-            let countPlayer = 0;
-            let countComputer = 0;
-
-            while ((countPlayer < 5) && (countComputer < 5)) {
-                let result = playRound(prompt('Your weapon'), computerPlay());
-                if (result === 0) {
-                    countPlayer++;
-                    countComputer++;
-                } else {
-                    result === 1 ? countPlayer++ : countComputer++;
+        let roundCounter = {
+            countPlayer: 0,
+            countComputer : 0,
+            roundWinner : function(result) {
+                if (result === null) {
+                return;
+                } else if (result === 0) {
+                    return;
+                } else if (result === 1) {
+                    this.countPlayer++;
+                } else if (result === -1) {
+                    this.countComputer++;
                 }
-                console.log(`You: ${countPlayer} x Computer: ${countComputer}`);
+            },
+            count: function() {
+                return (Math.max(this.countPlayer, this.countComputer) < 1);
+            },
+            player: function() {
+                return this.countPlayer;
+            },
+            computer: function() {
+                return this.countComputer;
+            },
+            reset: function() {
+                this.countPlayer = 0;
+                this.countComputer = 0;
             }
+        };
 
-            if (countPlayer == countComputer) {
-                return `Tie! You: ${countPlayer} x Computer: ${countComputer}`;
-            } else if (countPlayer === 5) {
-                return `You won! You: ${countPlayer} x Computer: ${countComputer}`;
-            } else {
-                return `You lose! You: ${countPlayer} x Computer: ${countComputer}`;
+        function game(player) {
+            let result = playRound(player, computerPlay());
+            let displayPlayer = document.getElementById('displayPlayer');
+            let displayComputer = document.getElementById('displayComputer');
+
+            roundCounter.roundWinner(result);
+
+            console.log(`You: ${roundCounter.player()} x Computer: ${roundCounter.computer()}`);
+
+            setTimeout(function(){
+                displayPlayer.textContent = roundCounter.player();
+                displayComputer.textContent = roundCounter.computer();
+            }, 2000);
+            
+
+        }
+
+        function uncheckAll(selectors) {
+            for (let i = 0, len = radios.length; i < len; i++) {
+                selectors[i].checked = false;
+
+                const label = document.querySelector(`label[for="${radios[i].id}"]`);
+                const svg = label.querySelector('.foreground');
+                svg.setAttribute('fill', 'white'); 
+
+                const player = document.querySelector('#displayPlayer').style;
+                player.setProperty('--background', '#');
+                const computer = document.querySelector('#displayComputer').style;
+                computer.setProperty('--background', '#');
             }
         }
 
-        console.log(game());
+        function resetGame() {
+            let displayPlayer = document.getElementById('displayPlayer');
+            let displayComputer = document.getElementById('displayComputer');
+
+            uncheckAll(radios);
+            roundCounter.reset();
+
+            displayPlayer.textContent = roundCounter.player();
+            displayComputer.textContent = roundCounter.computer();
+            console.log('reset');
+
+        }
+
+        function startSubmit() {
+            const weapon = this.querySelector('input[type=radio]:checked')
+
+            if (roundCounter.count()) {
+                if (weapon === null){
+                    return;
+                }
+
+                game(weapon.value);
+                setTimeout(uncheckAll, 3000, radios);
+            } else {
+                resetGame();
+            }
+
+            
+        }
+
+        const radios = document.querySelectorAll(`input[name="weapon"]`);
+        radios.forEach(radio => radio.addEventListener('click', changeColor))
+
+        const submitForm  = document.getElementById('weapon-btn-container');
+        submitForm.addEventListener('submit', startSubmit);
+
+        
+
     </script>
 </body>
 </html>
