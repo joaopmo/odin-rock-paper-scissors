@@ -104,7 +104,7 @@ hr {
     font-family: 'Press Start 2P', cursive;
     font-size: 2.4rem;
     background-color: rgba(var(--clr-purple), 0.5);
-    background-image: linear-gradient(45deg, rgba(var(--clr-silver)), rgba(var(--clr-red), 0.2), rgba(var(--clr-green)));
+    background-image: linear-gradient(45deg, rgba(var(--clr-silver)), rgba(var(--clr-pink)), rgba(var(--clr-green)));
     border: 2px solid rgba(var(--clr-purple), 0.7);
     box-shadow: 0 0 5px rgb(var(--clr-purple));
     color: #fff;
@@ -169,8 +169,8 @@ hr {
 }
 
 .winner {
-    transform: scale(1.8);
-    -webkit-text-stroke: 2px rgb(var(--clr-red));
+    transform: scale(2);
+    -webkit-text-stroke: 1px rgb(var(--clr-red));
     text-shadow: 
         0 0 30px rgb(var(--clr-red)), 
         0 0 60px rgb(var(--clr-red)), 
