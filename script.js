@@ -139,7 +139,7 @@ function resetGame() {
     let displayPlayer = document.getElementById('displayPlayer');
     let displayComputer = document.getElementById('displayComputer');
     let player = document.getElementById('player');
-    let computer = document.getElementById('player');
+    let computer = document.getElementById('computer');
 
     uncheckAll(radios);
     roundCounter.reset();
